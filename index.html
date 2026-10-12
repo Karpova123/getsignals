@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom, #060b1a, #000000);
+      color: white;
+      text-align: center;
+    }
+    .button {
+      background: linear-gradient(45deg, #d4145a, #fbb03b);
+      border: none;
+      border-radius: 20px;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button-green {
+      background: linear-gradient(45deg, #0f0, #0c0);
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+      animation: pulse 1.5s infinite;
+      color: black;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #0f0; }
+      50% { box-shadow: 0 0 30px #0f0; }
+      100% { box-shadow: 0 0 10px #0f0; }
+    }
+    .section { padding: 30px 20px; }
+    #signal-display {
+      font-size: 1.5em;
+      color: #00ffcc;
+      margin-top: 20px;
+    }
+    #id-input-section {
+      display: none;
+      margin-top: 20px;
+    }
+    #id-input-section input {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      width: 200px;
+    }
+    #id-confirm-btn, #deposit-btn {
+      margin-top: 10px;
+      background-color: #00ff00;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #balance-warning {
+      margin-top: 15px;
+      font-size: 1.1em;
+      color: #ff5050;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 80%;
+      margin-bottom: 40px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #444;
+    }
+    .comment {
+      background: #111c2b;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 15px;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+    }
+    .comment img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    .comment-info span:first-child {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h1>ඔබගේ වාරය තවම නැවතීලා නෑ. අදහස් වීමට තවත් තත්පර කිහිපයකි!</h1>
+    <a class="button" href="https://t.me/expert_luwan_bot" target="_blank">✉️ විරාත්ට ලියන්න</a>
+    <a class="button" href="https://reffpa.com/L?tag=d_6148842m_29091c_&site=6148842&ad=29091&r=registration  " target="_blank">🎮 ඇවියේටර් ක්‍රීඩාව</a>
+    <button class="button button-green" onclick="getSignal()">✅ සංඥා ලබාගන්න</button>
+    <div id="signal-display"></div>
+  </div>
+
+  <div id="id-input-section" class="section">
+    <h2>ඔබගේ 1xBet අංකය ඇතුළත් කරන්න</h2>
+    <input type="number" id="user-id" placeholder="ඔබගේ 1xBet ID">
+    <br>
+    <button id="id-confirm-btn" onclick="handleIdSubmit()">ID එක එක් කරන්න</button>
+    <div id="balance-warning"></div>
+    <a id="deposit-btn" href="https://reffpa.com/L?tag=d_4535500m_29091c_&site=4535500&ad=29091&r=registration" target="_blank" style="display:none">🤑 ගිණුමට මුදල් එක් කරන්න</a>
+  </div>
+
+  <div class="section">
+    <h2>පසුගිය වාරයේ ජයග්‍රාහකයින්</h2>
+    <table>
+      <tr><th>නම</th><th>අදහස</th><th>ලාභය</th></tr>
+      <tr><td>Ahmed Aravi</td><td>ස්තුතියි විරාත්, මම බැංකුවේ ණය වැටුප් කරලා දැන් පොළිය අතහැරන තැනට ආවා</td><td>912,350 LKR</td></tr>
+      <tr><td>Sudu Bandara</td><td>මම මුලින් විශ්වාස නෑ කියලා හිතුවා, දැන් හැම දිනෙකම සෙල්ලම් කරනවා</td><td>2,145,700 LKR</td></tr>
+      <tr><td>Nadeesha Kumari</td><td>විශ්වාසයි! විරාත්ට ස්තුතියි, දැන් මම නිදහසේ ජීවිතයකි</td><td>1,805,600 LKR</td></tr>
+      <tr><td>Tharindu Bandara</td><td>දැනට ආයේ වැඩක් කරන්න ඕන නෑ! මට ජීවිතේ හැමදේම තියනවා!</td><td>1,523,100 LKR</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="avatar">
+      <div class="comment-info">
+        <span>Arjuna Fernando</span>
+        <span>ස්තුතියි විරාත්, මම බැංකුවේ ණය වැටුප් කරලා දැන් මට තවත් කරදරක් නෑ</span>
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="avatar">
+      <div class="comment-info">
+        <span>Kavinda Raj</span>
+        <span>මම මුලින් විරාත්ට විශ්වාස නෑ කියලා හිතුවා. දැන් මම ඉතා ඉක්මනින් ලක්ෂ ගානක් ප්‍රමාණයකි!</span>
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="avatar">
+      <div class="comment-info">
+        <span>Nadeesha Kumari</span>
+        <span>මම වර්තමානයේ නිදහසේ ජීවිතයක් ජීවත්වෙනවා, ස්තුතියි විරාත්ට!</span>
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="avatar">
+      <div class="comment-info">
+        <span>Ravindu Senanayake</span>
+        <span>ඔයා හොයාගත්ත ජීවිත මගට වඩා මට ගැලපෙන්නෙ නැහැ. මම වෙනස් වෙන්න ගියාවි!</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let signalGiven = false;
+
+    function getSignal() {
+      const display = document.getElementById('signal-display');
+      const idSection = document.getElementById('id-input-section');
+
+      if (!signalGiven) {
+        const multiplier = (Math.random() * (3 - 1) + 1).toFixed(2);
+        display.textContent = `🚀 නව සංඥාවක් සූදානම්යි: ×${multiplier}`;
+        idSection.style.display = 'block';
+        signalGiven = true;
+      } else {
+        alert('සම්පුර්ණ සංඥා සඳහා, කරුණාකර \u003cb\u003e1xBet\u003c/b\u003e වෙබ් අඩවියට ලියාපදිංචි වන්න!');
+      }
+    }
+
+    function handleIdSubmit() {
+      const id = document.getElementById('user-id').value;
+      const warning = document.getElementById('balance-warning');
+      const depositBtn = document.getElementById('deposit-btn');
+
+      if (id.trim() !== '') {
+        warning.textContent = '📉 ඔබේ 1XBET ගිණුමේ ශේෂය 1600 LKRට අඩුයි. කරුණාකර ගිණුමට මුදල් එක් කරන්න!';
+        depositBtn.style.display = 'inline-block';
+      }
+    }
+  </script>
+</body>
+</html>
